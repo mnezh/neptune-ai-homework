@@ -1,18 +1,24 @@
+ifeq ($(OS),Windows_NT)
+	VENV_PREFIX=$(strip venv\bin\)
+else
+	VENV_PREFIX=venv/bin/
+endif
+
 setup: venv requirements.txt
 	pip install -r requirements.txt
 
 venv:
 	python -m venv venv
-	venv/bin/pip install --upgrade pip
+	$(VENV_PREFIX)pip install --upgrade pip
 
 style:
-	venv/bin/ruff check .
+	$(VENV_PREFIX)ruff check .
 
 format:
-	venv/bin/ruff format .
+	$(VENV_PREFIX)ruff format .
 
 test:
-	venv/bin/python -m pytest --spec tests
+	$(VENV_PREFIX)python -m pytest --spec tests
 
 clean:
 	rm -rf venv
