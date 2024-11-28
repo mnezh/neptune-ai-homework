@@ -4,6 +4,8 @@ else
 	VENV_PREFIX=venv/bin/
 endif
 
+TESTS?=tests
+
 setup: venv requirements.txt
 	pip install -r requirements.txt
 
@@ -18,7 +20,7 @@ format:
 	$(VENV_PREFIX)ruff format .
 
 test:
-	$(VENV_PREFIX)python -m pytest --spec tests
+	$(VENV_PREFIX)python -m pytest --spec -s $(TESTS)
 
 clean:
 	rm -rf venv

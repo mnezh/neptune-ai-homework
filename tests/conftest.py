@@ -22,10 +22,10 @@ def bearer_token() -> str:
 
 @pytest.fixture(scope="session")
 def auth_header(bearer_token: str) -> dict:
-    return {"headers": {"Authorization": f"Bearer {bearer_token}"}}
+    return {"Authorization": f"Bearer {bearer_token}"}
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def example_payload() -> dict:
     return {
         "product_id": 123,
@@ -37,7 +37,7 @@ def example_payload() -> dict:
     }
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def loose_schema() -> Schema:
     return Schema(
         And(

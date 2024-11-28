@@ -1,4 +1,4 @@
-# /orders/create endpoint should require Authorization header
+# /orders/create endpoint should respond 401 unauthorized for authorization errors
 `/orders/create` endpoint should require valid bearer token auth, but is works if Authorization header is omitted.
 
 ## Environment
