@@ -36,14 +36,16 @@ def valid_schema():
     def current_orders_is_is_a_positive_integer(parsed_response: dict):
         Schema(And(int, lambda n: n > 0)).validate(parsed_response["current_orders"])
 
-    @pytest.mark.xfail(reason="TODO")
+    @pytest.mark.xfail(reason="Bug #005: order_id is not UUID in API response")
     def order_id_is_UUID(order_details: dict):
         Schema(And(str, lambda oid: uuid.UUID(oid))).validate(order_details["order_id"])
 
     def quantity_is_is_a_positive_integer(order_details: dict):
         Schema(And(int, lambda n: n > 0)).validate(order_details["quantity"])
 
-    @pytest.mark.xfail(reason="TODO")
+    @pytest.mark.xfail(
+        reason="Bug #006: delivery_date is not YYYY-MM-DD in API response"
+    )
     def delivery_date_is_an_YYYY_MM_DD_date(order_details: dict):
         Schema(Use(lambda d: datetime.strptime(d, "%Y-%m-%d"))).validate(
             order_details["delivery_date"]
