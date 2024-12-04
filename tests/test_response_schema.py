@@ -80,9 +80,9 @@ def describe_response_for_JSON_payload():
 
     def reponse_has_fields_of_valid_types(
         response: requests.Response,
-        loose_schema: Schema,
+        loose_response_schema: Schema,
     ):
-        loose_schema.validate(response.text)
+        loose_response_schema.validate(response.text)
 
     def describe_valid_schema():
         def product_id_is_a_positive_integer(order_details: dict):
@@ -105,9 +105,9 @@ def describe_response_for_form_urlencoded_payload():
     )
     def reponse_has_fields_of_valid_types(
         response: requests.Response,
-        loose_schema: Schema,
+        loose_response_schema: Schema,
     ):
-        loose_schema.validate(response.text)
+        loose_response_schema.validate(response.text)
 
     def describe_valid_schema():
         @pytest.mark.xfail(
