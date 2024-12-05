@@ -2,8 +2,10 @@
 
 * Based on the requirements specified in [assignment/README.md](assignment/README.md)
 * Discovered the bugs listed in [bugs](bugs)
+* Test cases covered in [COVERAGE.md](COVERAGE.md)
 
 ## Setup
+
 Prerequisites: 
 * [recent](https://devguide.python.org/versions/) Python, most probably 3.11+ would work fine.
 * GNU make

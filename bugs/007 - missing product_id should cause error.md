@@ -5,7 +5,7 @@
 https://o2x5b-4a3w-1xb2-dot-neptune-sandbox-441620.lm.r.appspot.com
 
 ## Steps to reproduce
-```
+```shell
 curl -i \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
@@ -19,6 +19,6 @@ Endpoint should report error and respond with 400 status
 
 ## Actual results
 Endpoint responds with created order and 201 status and:
-```
+```json
 {"current_orders":18,"order_details":{"confirmation_code":"T5W2Y9Z4H6","delivery_date":"Tue, 31 Dec 2024 00:00:00 GMT","discount_applied":0.15,"order_id":"3379423","price_per_unit":10.5,"product_id":"8770625","quantity":5,"total_amount":52.5}}
 ```

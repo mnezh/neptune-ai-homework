@@ -12,7 +12,7 @@ Use either of invalid discount_rate values in JSON/form payload:
 - boolean (e.g. true)
 - string (e.g. "invalid")
 
-```
+```shell
 curl -i \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
@@ -26,6 +26,6 @@ Endpoint should report error and respond with 400 status
 
 ## Actual results
 Endpoint responds with created order and 201 status and:
-```
+```json
 {"current_orders":49,"order_details":{"confirmation_code":"B8C4V7G1D9","delivery_date":"Tue, 31 Dec 2024 00:00:00 GMT","discount_applied":"invalid","order_id":"8567527","price_per_unit":10.5,"product_id":1,"quantity":1,"total_amount":10.5}}
 ```

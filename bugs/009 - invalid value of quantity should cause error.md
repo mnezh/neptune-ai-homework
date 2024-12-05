@@ -10,7 +10,7 @@ Use either of invalid quantity values in JSON payload:
 - float (e.g. 0.5)
 - boolean (e.g. true)
 
-```
+```shell
 curl -i \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
@@ -24,6 +24,6 @@ Endpoint should report error and respond with 400 status
 
 ## Actual results
 Endpoint responds with created order and 201 status and:
-```
+```json
 {"current_orders":20,"order_details":{"confirmation_code":"B8C4V7G1D9","delivery_date":"Tue, 31 Dec 2024 00:00:00 GMT","discount_applied":0.15,"order_id":"9823507","price_per_unit":10.5,"product_id":1,"quantity":0,"total_amount":0.0}}
 ```

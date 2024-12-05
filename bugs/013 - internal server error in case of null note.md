@@ -6,7 +6,7 @@ https://o2x5b-4a3w-1xb2-dot-neptune-sandbox-441620.lm.r.appspot.com
 
 ## Steps to reproduce
 Use `null` value for quantity JSON payload:
-```
+```shell
 curl -i \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
@@ -20,6 +20,6 @@ Endpoint should report error and respond with 400 status
 
 ## Actual results
 Endpoint responds with 500 error and uncovers implementation details, exposing a security risk:
-```
+```json
 {"error":"'NoneType' object has no attribute 'lower'"}
 ```

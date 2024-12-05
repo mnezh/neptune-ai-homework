@@ -10,7 +10,7 @@ Use either of invalid values for delivery_date JSON payload:
 - number (e.g. 1)
 - null
 
-```
+```shell
 curl -i \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
@@ -24,6 +24,6 @@ Endpoint should report error and respond with 400 status
 
 ## Actual results
 Endpoint responds with 500 error and uncovers implementation details, exposing a security risk:
-```
+```json
 {"error":"strptime() argument 1 must be str, not int"}
 ```

@@ -10,7 +10,7 @@ Use the following values:
 * price_per_unit: 2.0
 * discount_rate: 0.15
 
-```
+```shell
 curl -i \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
@@ -24,6 +24,6 @@ curl -i \
 
 ## Actual results
 `total_amount` in response is 4.0, as if discount_rate is ignored:
-```
+```json
 {"current_orders":5,"order_details":{"confirmation_code":"X7Q9R2P5F3","delivery_date":"Tue, 31 Dec 2024 00:00:00 GMT","discount_applied":0.15,"order_id":"2620928","price_per_unit":2.0,"product_id":1,"quantity":2,"total_amount":4.0}}
 ```

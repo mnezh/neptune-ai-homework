@@ -5,7 +5,7 @@ Given x-www-form-urlencoded payload, `/orders/create` endpoint responds with the
 https://o2x5b-4a3w-1xb2-dot-neptune-sandbox-441620.lm.r.appspot.com
 
 ## Steps to reproduce
-```
+```shell
 curl -i \
     --data-urlencode "product_id=123" \
     --data-urlencode "quantity=5" \
@@ -21,6 +21,6 @@ curl -i \
 
 ## Actual results
 It seems that regardless the input, the output is always `0.1`
-```
+```json
 {"current_orders":10,"order_details":{"confirmation_code":"S6F2A9E3X7","delivery_date":"Tue, 31 Dec 2024 00:00:00 GMT","discount_applied":0.1,"order_id":"7395322","price_per_unit":10.5,"product_id":"123","quantity":5,"total_amount":52.5}}
 ```

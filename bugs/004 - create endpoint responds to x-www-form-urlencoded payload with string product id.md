@@ -5,7 +5,7 @@ given valid request `x-www-form-urlencoded` payload, `/orders/create` endpoint r
 https://o2x5b-4a3w-1xb2-dot-neptune-sandbox-441620.lm.r.appspot.com
 
 ## Steps to reproduce
-```
+```shell
 curl -i \
     --data-urlencode "product_id=123" \
     --data-urlencode "quantity=5" \

@@ -12,7 +12,7 @@ Use either of invalid product_id values in JSON payload:
 - boolean (e.g. true)
 - questionable: negative int (IDs are typically unsigned ints, needs to be checked with stakeholders)
 
-```
+```shell
 curl -i \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
@@ -26,6 +26,6 @@ Endpoint should report error and respond with 400 status
 
 ## Actual results
 Endpoint responds with created order and 201 status and:
-```
+```json
 {"current_orders":19,"order_details":{"confirmation_code":"T5W2Y9Z4H6","delivery_date":"Tue, 31 Dec 2024 00:00:00 GMT","discount_applied":0.15,"order_id":"6352839","price_per_unit":10.5,"product_id":0.5,"quantity":5,"total_amount":52.5}}
 ```
