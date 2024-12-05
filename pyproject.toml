@@ -1,2 +1,3 @@
 [tool.pytest.ini_options]
 xfail_strict = true
+addopts = "--html=reports/html/index.html --junitxml=reports/report.xml"

@@ -22,5 +22,11 @@ format:
 test:
 	$(VENV_PREFIX)python -m pytest --spec -s $(TESTS)
 
+package: build/package.zip
+
+build/package.zip:
+	mkdir -p build
+	zip -r build/package.zip * -x "*/.*" -x "build/*" -x "reports/*" -x "*__pycache__*" "venv/*"
+	
 clean:
-	rm -rf venv
+	rm -rf venv reports

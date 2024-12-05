@@ -6,3 +6,4 @@ requests==2.32.3
 ruff==0.8.0
 schema==0.7.7
 uuid==1.30
+pytest-html==4.1.1

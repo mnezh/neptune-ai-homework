@@ -2,6 +2,8 @@ import _pytest
 import pytest
 import requests
 
+from tests.lib import payload_arg
+
 
 def describe_required_fields():
     def describe_missing_fields():
@@ -613,7 +615,3 @@ def build_parameter(
     if failure:
         kwargs["marks"] = pytest.mark.xfail(reason=failure)
     return pytest.param(value, status, error, payload_arg(payload_type), **kwargs)
-
-
-def payload_arg(payload_type: str) -> str:
-    return "json" if payload_type == "json" else "data"
